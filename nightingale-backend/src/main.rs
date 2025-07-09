@@ -1,4 +1,5 @@
 use actix_web::{get, post, web, App, HttpServer, HttpResponse, Responder};
+use actix_cors::Cors;
 use env_logger::Env;
 mod auth;
 mod blog;
@@ -11,6 +12,7 @@ async fn main() -> std::io::Result<()> {
 
     HttpServer::new(|| {
         App::new()
+            .wrap(actix_cors::Cors::permissive())
             .service(web::scope("/api")
                 .configure(auth::routes)
                 .configure(blog::routes))

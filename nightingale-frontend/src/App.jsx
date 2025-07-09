@@ -19,6 +19,7 @@ function App() {
           <Route path="/chat" element={<Chat />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/blog" element={<BlogList />} />
+          <Route path="/blog/new" element={<BlogEdit />} />
           <Route path="/blog/:id" element={<BlogEdit />} />
         </Routes>
       </main>
