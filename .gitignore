@@ -1,0 +1,8 @@
+nightingale-backend/target
+nightingale-frontend/node_modules
+nightingale-frontend/dist
+nightingale-frontend/.vite
+nightingale-frontend/.cache
+.vscode
+.idea
+nightingale-backend/target/*

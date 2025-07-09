@@ -1,0 +1,23 @@
+use actix_web::{get, post, web, App, HttpServer, HttpResponse, Responder};
+use env_logger::Env;
+mod auth;
+mod blog;
+mod ws;
+mod models;
+
+#[actix_web::main]
+async fn main() -> std::io::Result<()> {
+    env_logger::Builder::from_env(Env::default().default_filter_or("info")).init();
+
+    HttpServer::new(|| {
+        App::new()
+            .service(web::scope("/api")
+                .configure(auth::routes)
+                .configure(blog::routes))
+            .service(ws::chat_route)
+    })
+    .bind(("0.0.0.0", 8080))?
+    .run()
+    .await
+}
+
