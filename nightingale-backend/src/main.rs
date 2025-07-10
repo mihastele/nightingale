@@ -1,5 +1,4 @@
-use actix_web::{get, post, web, App, HttpServer, HttpResponse, Responder};
-use actix_cors::Cors;
+use actix_web::{web, App, HttpServer};
 use env_logger::Env;
 mod auth;
 mod blog;
