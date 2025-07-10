@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Chat from './pages/Chat';
+import Call from './pages/Call';
 import Profile from './pages/Profile';
 import BlogList from './pages/BlogList';
 import BlogEdit from './pages/BlogEdit';
@@ -18,6 +19,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/chat" element={<Chat />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/call/:roomId?" element={<Call />} />
           <Route path="/blog" element={<BlogList />} />
           <Route path="/blog/new" element={<BlogEdit />} />
           <Route path="/blog/:id" element={<BlogEdit />} />

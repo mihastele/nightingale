@@ -9,6 +9,7 @@ export default function Navbar() {
         <Link to="/" className="text-2xl font-bold">Nightingale</Link>
         <div className="flex space-x-4">
           <Link to="/chat" className="px-3 py-2 rounded-md hover:bg-indigo-600 transition-colors">Chat</Link>
+          <Link to="/call" className="px-3 py-2 rounded-md hover:bg-indigo-600 transition-colors">Call</Link>
           <Link to="/blog" className="px-3 py-2 rounded-md hover:bg-indigo-600 transition-colors">Blog</Link>
         </div>
         <div className="flex items-center space-x-4">

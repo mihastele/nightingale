@@ -3,6 +3,7 @@ use env_logger::Env;
 mod auth;
 mod blog;
 mod ws;
+mod signal;
 mod models;
 
 #[actix_web::main]
@@ -16,6 +17,7 @@ async fn main() -> std::io::Result<()> {
                 .configure(auth::routes)
                 .configure(blog::routes))
             .service(ws::chat_route)
+            .service(signal::call_route)
     })
     .bind(("0.0.0.0", 8080))?
     .run()
